@@ -22,6 +22,14 @@ const getData = function (request) {
     if (request.dataMode === "urlencoded") {
         return serialize(request.data);
     }
+
+    //in the standalone app, dataMode is undefined
+    if (request.dataMode === undefined) {
+        if (typeof request.data === "string") {
+            return request.data;
+        }
+        return serialize(request.data);
+    }
 };
 
 const options = signer(
