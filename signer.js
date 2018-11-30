@@ -8,7 +8,7 @@ module.exports = function (escherParams, url, method, data) {
             url: url
         };
 
-    l = Url.parse(request.url);
+    l = Url.parse(pm.environment.values.substitute(pm.request.url, null, false).toString());
 
     var options = {
         host: l.hostname,
