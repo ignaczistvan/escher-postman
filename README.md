@@ -15,6 +15,12 @@ Add the following headers to the request:
 X-Escher-Auth: {{auth}}
 X-Escher-Date: {{date}}
 ```
+You can still use other environment variables as header parameters or as part of the URL:
+```
+X-Correlation-Id: {{myCorrelationId}}
+or
+{{baseUrl}}/users/1
+```
 
 ## Development
 
